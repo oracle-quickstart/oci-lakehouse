@@ -2,6 +2,7 @@
 # Environmental variables
 # ---------------------------------------------------------------------------------------------------------------------
 
+variable "tenancy_ocid" {}
 variable "compartment_id" {}
 variable "vcn_id" {}
 variable "privateSubnet" {

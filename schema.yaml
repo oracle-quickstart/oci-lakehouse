@@ -88,7 +88,6 @@ groupings:
   - stream_pool_name
   - stream_retention_in_hours
   - stream_pool_kafka_settings_auto_create_topics_enable
-  - stream_pool_kafka_settings_bootstrap_servers
   - stream_pool_kafka_settings_log_retention_hours
   - stream_pool_kafka_settings_num_partitions
   visible: deploy_streaming
@@ -596,13 +595,6 @@ variables:
     title: "Auto Create Topics"
     description: "(Updatable) Enable auto creation of topic on the server."
     default: true
-    required: true
-
-  stream_pool_kafka_settings_bootstrap_servers:
-    type: boolean
-    title: "Bootstrap Servers"
-    description: "(Updatable) Bootstrap servers."
-    default: false
     required: true
 
   stream_pool_kafka_settings_log_retention_hours:

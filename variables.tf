@@ -202,7 +202,7 @@ variable "stream_pool_name" {   default = " " }
 # Optional
 variable "stream_retention_in_hours" {   default = " " }
 variable "stream_pool_kafka_settings_auto_create_topics_enable" {   default = " " }
-variable "stream_pool_kafka_settings_bootstrap_servers" {   default = " " }
+#variable "stream_pool_kafka_settings_bootstrap_servers" {   default = " " }
 variable "stream_pool_kafka_settings_log_retention_hours" {   default = " " }
 variable "stream_pool_kafka_settings_num_partitions" {   default = " " }
 #variable "stream_pool_private_endpoint_settings_nsg_ids" {   default = " " }

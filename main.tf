@@ -74,7 +74,7 @@ module "data_catalog" {
   compartment_id = var.compartment_ocid
   catalog_display_name = var.catalog_display_name
   privateSubnet = var.useExistingVcn ? var.privateSubnet : module.network[0].private-id
-  catalog_private_endpoint_dns_zones = "${data.oci_core_subnet.privateSubnet.dns_label}.${data.oci_core_vcn.vcn_info.vcn_domain_name}"
+  catalog_private_endpoint_dns_zones = [ "${data.oci_core_subnet.privateSubnet.dns_label}.${data.oci_core_vcn.vcn_info.vcn_domain_name}" ]
   catalog_private_endpoint_display_name = "Default VCN Private Endpoint"
   # metastore_default_external_table_location = var.metastore_default_external_table_location
   # metastore_default_managed_table_location = var.metastore_default_managed_table_location
@@ -91,6 +91,7 @@ module "data_catalog" {
 module "data_integration" {
   count = var.deploy_data_integration ? 1 : 0
   source = "./modules/data_integration"
+  tenancy_ocid = var.tenancy_ocid
   compartment_id = var.compartment_ocid
   vcn_id = var.useExistingVcn ? var.myVcn : module.network[0].vcn-id
   privateSubnet = var.useExistingVcn ? var.privateSubnet : module.network[0].private-id
@@ -127,7 +128,7 @@ module "streaming" {
   stream_pool_name = var.stream_pool_name
   stream_retention_in_hours = var.stream_retention_in_hours
   stream_pool_kafka_settings_auto_create_topics_enable = var.stream_pool_kafka_settings_auto_create_topics_enable
-  stream_pool_kafka_settings_bootstrap_servers = var.stream_pool_kafka_settings_bootstrap_servers
+  #stream_pool_kafka_settings_bootstrap_servers = var.stream_pool_kafka_settings_bootstrap_servers
   stream_pool_kafka_settings_log_retention_hours = var.stream_pool_kafka_settings_log_retention_hours
   stream_pool_kafka_settings_num_partitions = var.stream_pool_kafka_settings_num_partitions
   #stream_pool_private_endpoint_settings_nsg_ids = var.stream_pool_private_endpoint_settings_nsg_ids

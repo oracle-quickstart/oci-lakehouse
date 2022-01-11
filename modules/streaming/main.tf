@@ -25,7 +25,7 @@ resource "oci_streaming_stream_pool" "stream_pool" {
 
         #Optional
         auto_create_topics_enable = var.stream_pool_kafka_settings_auto_create_topics_enable
-        bootstrap_servers = var.stream_pool_kafka_settings_bootstrap_servers
+        #bootstrap_servers = var.stream_pool_kafka_settings_bootstrap_servers
         log_retention_hours = var.stream_pool_kafka_settings_log_retention_hours
         num_partitions = var.stream_pool_kafka_settings_num_partitions
     }
