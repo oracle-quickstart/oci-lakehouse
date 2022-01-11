@@ -91,7 +91,6 @@ module "data_catalog" {
 module "data_integration" {
   count = var.deploy_data_integration ? 1 : 0
   source = "./modules/data_integration"
-  tenancy_ocid = var.tenancy_ocid
   compartment_id = var.compartment_ocid
   vcn_id = var.useExistingVcn ? var.myVcn : module.network[0].vcn-id
   privateSubnet = var.useExistingVcn ? var.privateSubnet : module.network[0].private-id
