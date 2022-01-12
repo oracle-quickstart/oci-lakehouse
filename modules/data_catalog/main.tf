@@ -6,15 +6,15 @@ resource "oci_datacatalog_catalog" "catalog" {
     display_name = var.catalog_display_name
 }
 
-resource "oci_datacatalog_catalog_private_endpoint" "catalog_private_endpoint" {
-    #Required
-    compartment_id = var.compartment_id
-    dns_zones = var.catalog_private_endpoint_dns_zones
-    subnet_id = var.privateSubnet
-
-    #Optional
-    display_name = var.catalog_private_endpoint_display_name
-}
+#resource "oci_datacatalog_catalog_private_endpoint" "catalog_private_endpoint" {
+#    #Required
+#    compartment_id = var.compartment_id
+#    dns_zones = var.catalog_private_endpoint_dns_zones
+#    subnet_id = var.privateSubnet
+#
+#    #Optional
+#    display_name = var.catalog_private_endpoint_display_name
+#}
 
 #resource "oci_datacatalog_metastore" "catalog_metastore" {
     #Required

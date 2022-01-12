@@ -93,7 +93,9 @@ variable "autonomous_database_db_name" { default = " " }
 # Optional
 variable "autonomous_database_admin_password" { default = " " }
 variable "autonomous_database_cpu_core_count" { default = " " }
+variable "is_autonomous_dedicated" { default = "false" }
 variable "autonomous_database_data_storage_size_in_gb" { default = " " }
+variable "autonomous_database_data_storage_size_in_tbs" { default = " " }
 variable "autonomous_database_display_name" { default = " " }
 variable "autonomous_database_is_preview_version_with_service_terms_accepted" { default = false }
 #variable "autonomous_database_nsg_ids" {  default = " " }

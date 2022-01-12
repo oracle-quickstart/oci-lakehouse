@@ -27,7 +27,9 @@ module "autonomous_data_warehouse" {
   autonomous_database_db_name = var.autonomous_database_db_name
   autonomous_database_admin_password = var.autonomous_database_admin_password
   autonomous_database_cpu_core_count = var.autonomous_database_cpu_core_count
+  is_autonomous_dedicated = var.is_autonomous_dedicated
   autonomous_database_data_storage_size_in_gb = var.autonomous_database_data_storage_size_in_gb
+  autonomous_database_data_storage_size_in_tbs = var.autonomous_database_data_storage_size_in_tbs
   autonomous_database_display_name = var.autonomous_database_display_name
   autonomous_database_is_preview_version_with_service_terms_accepted = var.autonomous_database_is_preview_version_with_service_terms_accepted
   # autonomous_database_nsg_ids = var.autonomous_database_nsg_ids

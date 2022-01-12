@@ -6,12 +6,13 @@ resource "oci_streaming_connect_harness" "connect_harness" {
 
 
 resource "oci_streaming_stream" "data_stream" {
+    depends_on = [ oci_streaming_stream_pool.stream_pool ]
     #Required
     name = var.stream_name
     partitions = var.stream_partitions
 
     #Optional
-    compartment_id = var.compartment_id
+    #compartment_id = var.compartment_id
     retention_in_hours = var.stream_retention_in_hours
     stream_pool_id = oci_streaming_stream_pool.stream_pool.id
 }

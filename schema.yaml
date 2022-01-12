@@ -26,7 +26,9 @@ groupings:
   - autonomous_database_db_name
   - autonomous_database_admin_password
   - autonomous_database_cpu_core_count
+  - is_autonomous_dedicated
   - autonomous_database_data_storage_size_in_gb
+  - autonomous_database_data_storage_size_in_tbs
   - autonomous_database_display_name
   - autonomous_database_is_preview_version_with_service_terms_accepted
   visible: deploy_ADB
@@ -245,12 +247,30 @@ variables:
     required: true
     default: "2"
 
+  is_autonomous_dedicated:
+    type: boolean
+    title: "Dedicated Exadata Infrastructure"
+    description: "Selecting this option will deploy the database to dedicated Exadata infrastructure.  Note that this incurs a higher cost."
+    required: true
+    default: false
+
   autonomous_database_data_storage_size_in_gb:
     type: int
     title: "Database Storage in GB"
     description: "(Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape."
     required: true
-    default: "50"
+    default: "1000"
+    visible: is_autonomous_dedicated
+
+  autonomous_database_data_storage_size_in_tbs:
+    type: int
+    title: "Database Storage in GB"
+    description: "(Optional) (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database."
+    required: true
+    default: "1"
+    visbible:
+      not:
+        - is_autonomous_dedicated
 
   autonomous_database_display_name:    
     type: string
@@ -282,11 +302,11 @@ variables:
   bds_instance_cluster_version:
     type: enum
     enum:
-    - "ODH 1.0"
+    - "ODH1"
     title: "Cluster Version"
     description: "Version of the Hadoop distribution."
     required: true
-    default: "ODH 1.0"
+    default: "ODH1"
 
   bds_instance_display_name:
     type: string
@@ -519,8 +539,8 @@ variables:
     type: int
     title: "Cluster Size"
     description: "The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster."
-    default: 1
-    min: 1
+    default: 2
+    min: 2
     required: true
 
   mysql_db_system_data_storage_size_in_gb:
