@@ -18,7 +18,7 @@ You should also ensure you have proper service limits for your tenancy prior to 
 
 Click the Deploy to OCI button here which will import the stack into your tenancy.
 
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-lakehouse/archive/1.0.0.zip)
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-lakehouse/archive/v1.0.0.zip)
 
 ## VCN 
 
