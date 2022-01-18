@@ -284,6 +284,9 @@ variables:
     title: "Use Preview Version"
     description: "Click to accept terms of service for deployment of the Autonomous Database preview version. (Optional)"
     default: false
+    visibility:
+      not:
+        - is_autonomous_dedicated
 
   bds_instance_cluster_admin_password:
     type: password
